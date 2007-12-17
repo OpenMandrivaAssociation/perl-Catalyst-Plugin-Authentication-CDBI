@@ -15,7 +15,6 @@ BuildRequires:	perl-devel
 BuildRequires:	perl-Catalyst
 BuildRequires:	perl-Catalyst-Plugin-Authentication
 BuildArch:	noarch
-Buildroot:	%{_tmppath}/%{name}-root
 
 %description
 This plugin allows you to authenticate your web users using
