@@ -1,7 +1,7 @@
 %define realname Catalyst-Plugin-Authentication-CDBI
 %define name perl-%{realname}
 %define version 0.10
-%define release %mkrel 2
+%define release %mkrel 4
 
 Summary:	CDBI Authentication for Catalyst
 Name:		%{name}
