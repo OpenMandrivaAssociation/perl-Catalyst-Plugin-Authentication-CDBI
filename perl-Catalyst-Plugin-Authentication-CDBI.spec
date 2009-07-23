@@ -1,21 +1,20 @@
-%define realname Catalyst-Plugin-Authentication-CDBI
-%define name perl-%{realname}
-%define version 0.10
-%define release %mkrel 4
+%define upstream_name    Catalyst-Plugin-Authentication-CDBI
+%define upstream_version 0.10
+
+Name:		perl-%{upstream_name}
+Version:	%perl_convert_version %{upstream_version}
+Release:	%mkrel 1
 
 Summary:	CDBI Authentication for Catalyst
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
 License:	Artistic/GPL
 Group:		Development/Perl
-URL:		http://search.cpan.org/dist/%{realname}/
-Source:		/%{realname}-%{version}.tar.bz2
-BuildRequires:	perl-devel
-BuildRequires:	perl-Catalyst
-BuildRequires:	perl-Catalyst-Plugin-Authentication
+URL:		http://search.cpan.org/dist/%{upstream_name}/
+Source0:	http://www.cpan.org/modules/by-module/Catalyst/%{upstream_name}-%{upstream_version}.tar.bz2
+
+BuildRequires:	perl(Catalyst)
+BuildRequires:	perl(Catalyst::Plugin::Authentication)
+Buildroot:	%{_tmppath}/%{name}-%{version}-%{release}
 BuildArch:	noarch
-Buildroot:	%{_tmppath}/%{name}-root
 
 %description
 This plugin allows you to authenticate your web users using
@@ -28,7 +27,7 @@ you probably want to look at Catalyst::Plugin::Authentication
 and friends instead
 
 %prep
-%setup -q -n %{realname}-%{version}
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %__perl Makefile.PL INSTALLDIRS=vendor
