@@ -1,15 +1,13 @@
 %define upstream_name    Catalyst-Plugin-Authentication-CDBI
-%define upstream_version 0.10
-
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	5
+Version:	0.10
+Release:	6
 
 Summary:	CDBI Authentication for Catalyst
 License:	Artistic/GPL
 Group:		Development/Perl
-URL:		https://search.cpan.org/dist/%{upstream_name}/
-Source0:	http://www.cpan.org/modules/by-module/Catalyst/%{upstream_name}-%{upstream_version}.tar.bz2
+URL:		https://metacpan.org/dist/%{upstream_name}/
+Source0:	http://www.cpan.org/modules/by-module/Catalyst/%{upstream_name}-%{version}.tar.bz2
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -28,7 +26,7 @@ you probably want to look at Catalyst::Plugin::Authentication
 and friends instead
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
@@ -54,8 +52,7 @@ make test
 * Thu Jul 23 2009 Jérôme Quelin <jquelin@mandriva.org> 0.100.0-1mdv2011.0
 + Revision: 398819
 - rebuild
-- using %%perl_convert_version
-- fixed source field
+- using %0.10 fixed source field
 
 * Wed Jul 23 2008 Thierry Vignaud <tv@mandriva.org> 0.10-4mdv2009.0
 + Revision: 241159
